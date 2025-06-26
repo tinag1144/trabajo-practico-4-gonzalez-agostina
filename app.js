@@ -1,6 +1,7 @@
 import express from "express";//con esto se crea el servidor base 
 import "dotenv/config"; //esto hace que el app.js pueda "leer" el .env 
-import { startDb } from "./src/config/database.js"; //Importa el 
+import { startDb } from "./src/config/database.js"; //Importa la funcion de databse.js
+
 const app = express(); 
 const PORT = process.env.PORT;
 
