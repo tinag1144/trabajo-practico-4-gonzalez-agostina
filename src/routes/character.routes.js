@@ -1,9 +1,18 @@
 import { Router } from "express";
-import { getAllCharacters } from "../controllers/character.controllers.js";
+import { //se importan todas las funciones que se escribieron en character.controllers.js
+  getAllCharacters,
+  getCharacterById,
+  createCharacter,
+  updateCharacter,
+  deleteCharacter
+} from "../controllers/character.controllers.js";
 
-const characterRoutes = Router();
+const router = Router();
 
-characterRoutes.get("/characters", getAllCharacters);
+router.get("/characters", getAllCharacters);
+router.get("/characters/:id", getCharacterById);
+router.post("/characters", createCharacter);
+router.put("/characters/:id", updateCharacter);
+router.delete("/characters/:id", deleteCharacter);
 
-
-export { characterRoutes};
+export { router }; //esto es para exportar el router y que se pueda usar en app.js 

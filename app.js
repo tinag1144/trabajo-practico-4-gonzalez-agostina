@@ -1,13 +1,13 @@
 import express from "express";//con esto se crea el servidor base 
 import "dotenv/config"; //esto hace que el app.js pueda "leer" el .env 
 import { startDb } from "./src/config/database.js"; //Importa la funcion de databse.js
-import { characterRoutes } from "./src/routes/character.routes.js";//importa las rutas de routes.js 
+import { router } from "./src/routes/character.routes.js";//importa las rutas de routes.js 
 
 const app = express(); 
 const PORT = process.env.PORT;
 
-app.use("/api", characterRoutes); // montar las rutas en /api
 app.use(express.json()); //esto es para que express entienda json
+app.use("/api", router); // montar las rutas en /api
 
 app.get("/", (req, res) => {
   res.send("Hola Mundo"); //cuando se entra en la ruta raíz ("/") con el método get, se muestra el mensaje "Hola Mundo"

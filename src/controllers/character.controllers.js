@@ -10,7 +10,7 @@ export const getAllCharacters = async (req, res) => { //estaf funcion maneja los
     }
 };
 
-// 🔹 Traer uno por ID
+// Traer uno por ID
 export const getCharacterById = async (req, res) => {
   const { id } = req.params; //extrae el ID de la URL 
   try {
@@ -24,7 +24,7 @@ export const getCharacterById = async (req, res) => {
   }
 };
 
-// 🔹 Crear un personaje nuevo
+//Crear un personaje nuevo
 export const createCharacter = async (req, res) => { //este controlador crea un nuevo personaje, no sin antes hacer sus validaciones
   const { name, ki, race, gender, description } = req.body;
 
@@ -61,7 +61,7 @@ export const createCharacter = async (req, res) => { //este controlador crea un 
   }
 };
 
-// 🔹 Actualizar un personaje
+// Actualizar un personaje
 export const updateCharacter = async (req, res) => {
   const { id } = req.params;
   const { name, ki, race, gender, description } = req.body;
@@ -106,7 +106,7 @@ export const updateCharacter = async (req, res) => {
   }
 };
 
-// 🔹 Eliminar personaje
+// Eliminar personaje
 export const deleteCharacter = async (req, res) => {
   const { id } = req.params;
 
