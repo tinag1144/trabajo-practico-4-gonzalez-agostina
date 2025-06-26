@@ -1,6 +1,7 @@
 import { Sequelize } from "sequelize"; //instancia en Sequelize, conexión actica de la base de datos 
 import "dotenv/config";
-import { log } from "console";
+
+
 
 export const sequelize = new Sequelize( //conexión con la base de datos 
     process.env.DB_NAME,
@@ -13,6 +14,7 @@ export const sequelize = new Sequelize( //conexión con la base de datos
         logging: false,
     }
 )
+
 export const startDb = async() =>{ //función asincrónica que se crea para probar la conexión con la base de datos 
   try { 
       await sequelize.authenticate(); //esto prueba la conexión, si anda bien imprime lo siguiente: 
@@ -25,3 +27,4 @@ export const startDb = async() =>{ //función asincrónica que se crea para prob
     
   }
 }
+
