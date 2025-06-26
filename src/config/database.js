@@ -1,8 +1,6 @@
 import { Sequelize } from "sequelize"; //instancia en Sequelize, conexión actica de la base de datos 
 import "dotenv/config";
 
-
-
 export const sequelize = new Sequelize( //conexión con la base de datos 
     process.env.DB_NAME,
     process.env.DB_USER,
